@@ -1,0 +1,1075 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #A32638; /* Kırmızı - Galatasaray'ın ana rengi */
+  --secondary-color: #FDB927; /* Sarı - Galatasaray'ın tamamlayıcı rengi */
+  --accent-color: #E0E0E0; /* Açık gri ton - Nötr alanlar için kullanılabilir */
+  --text-dark: #1a1a1a; /* Koyu gri ton - Ana metin rengi */
+  --text-light: #666666; /* Açık gri ton - Yardımcı metinler için */
+  --extra-light: #f9f9f9; /* Çok açık gri ton - Arka planlar için */
+  --white: #ffffff; /* Beyaz - Kontrast ve temiz arka planlar için */
+  --gradient-1: linear-gradient(to right, #A32638, #FDB927); /* Kırmızıdan sarıya geçiş */
+  --gradient-2: linear-gradient(to right, #FDB927, #FFCC00); /* Sarı tonlarında geçiş */
+  --max-width: 1200px;
+}
+
+
+
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+  overflow: hidden; /* İçeriğin taşmasını önler */
+  transition: max-height 0.5s ease-out; /* Yükseklik değişimlerini yumuşatır */
+  max-height: 1000px; /* Başlangıç için varsayılan maksimum yükseklik */
+}
+
+
+.section__header {
+  position: relative;
+  isolation: isolate;
+  font-size: 2rem;
+  line-height: 2.75rem;
+  max-width: 400px;
+}
+
+.section__header::before {
+  position: absolute;
+  top: -3rem;
+  width: max-content;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 6rem;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--text-dark);
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  overflow: hidden;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-dark);
+}
+
+.nav__logo img {
+  max-width: 175px;
+}
+
+.nav__logo .logo-dark {
+  display: none;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav__links.open {
+  transform: translateY(100%);
+}
+
+.nav__links a {
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.nav__btns {
+  display: none;
+}
+
+.header__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.header__container h1 {
+  position: relative;
+  isolation: isolate;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 5rem;
+  color: var(--secondary-color);
+  font-style: italic;
+  text-align: center;
+}
+
+.header__container h1::before {
+  position: absolute;
+  content: "GROW YOUR STRENGTH";
+  top: -5rem;
+  left: -5rem;
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 10rem;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+.header__container h2 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 5rem;
+  color: var(--text-dark);
+  font-style: italic;
+  text-align: center;
+}
+
+.header__container p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.header__btn {
+  text-align: center;
+}
+
+.header__image img {
+  max-width: 300px;
+  margin-inline: auto;
+}
+
+.about {
+  overflow: hidden;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.about__image {
+  position: relative;
+  isolation: isolate;
+}
+
+.about__image::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-75%, -50%);
+  width: calc(100% - 5rem);
+  aspect-ratio: 1;
+  background-image: var(--gradient-2);
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.about__image img {
+  max-width: 550px;
+  margin-inline: auto;
+}
+
+.about__content .section__header::before {
+  content: "H";
+}
+
+.about__content p {
+  margin-top: 1rem;
+  color: var(--text-light);
+}
+
+.about__content p:nth-child(3) {
+  margin-bottom: 2rem;
+}
+
+.service {
+  background-color: var(--text-dark);
+  overflow: hidden;
+}
+
+.service__container .section__header {
+  color: var(--white);
+}
+
+.service__container .section__header::before {
+  content: "Egzersizler";
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.service__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.service__card span {
+  font-size: 2rem;
+  font-weight: 800;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--white);
+  opacity: 0.75;
+}
+
+.service__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.service__card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer; /* Tıklanabilir olduğunu belirten imleç */
+}
+
+.service__card:hover {
+  transform: translateY(-5px);
+}
+
+.service__image {
+  display: none;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 sütun oluşturur ve her bir sütunu eşit genişlikte yapar */
+  gap: 20px; /* Sütunlar ve satırlar arasında 20px boşluk bırakır */
+  padding: 20px; /* Grid'in dış çevresine 20px padding ekler */
+}
+
+.service__card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 20px auto;
+  background-color: var(--extra-light); /* Sitenizin açık renk temasına uygun */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+  width: 100%; /* Genişlik ayarı */
+  max-width: 600px; /* Maksimum genişlik sınırı */
+}
+
+.search-input, .category-dropdown {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid var(--primary-color); /* Primir renge uygun bir border */
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-dark); /* Metin rengi */
+  background-color: var(--white); /* Arka plan rengi */
+  width: 48%; /* İki elementin her biri için yüzde olarak genişlik */
+}
+
+.search-input {
+  width: 58%; /* Arama çubuğunun genişliğini biraz daha fazla tut */
+}
+
+.category-dropdown {
+  width: 38%; /* Dropdown listesinin genişliğini biraz daha azalt */
+}
+
+
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.service__card:hover {
+  transform: translateY(-5px);
+}
+
+
+.popular {
+  overflow: hidden;
+}
+
+.popular__container .section__header::before {
+  content: "Popular Classes";
+}
+
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.popular__card {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--extra-light);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.popular__card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popular__card div {
+  flex: 1;
+}
+
+.popular__card h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.popular__card span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.popular__card:hover span {
+  transform: translateX(10px);
+}
+
+.popular__card p {
+  color: var(--text-light);
+}
+
+.facility__container {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  overflow: hidden;
+}
+
+.facility__content {
+  padding: 5rem 1rem;
+}
+
+.facility__content::before {
+  position: absolute;
+  content: "";
+  background-image: var(--gradient-2);
+  grid-area: 1/1/3/2;
+  inset: 0;
+  z-index: -1;
+}
+
+.facility__content .section__header {
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.facility__content .section__header::before {
+  content: "Facilities";
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.facility__content p {
+  color: var(--white);
+}
+
+.facility__content p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.mentor__container {
+  overflow: hidden;
+}
+
+.mentor__container .section__header::before {
+  content: "Best Team";
+}
+
+.mentor__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 4rem 1rem;
+}
+
+.mentor__card img {
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}
+
+.mentor__card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.mentor__card p {
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.banner {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  overflow: hidden;
+}
+
+.banner__content {
+  padding: 5rem 1rem;
+}
+
+.banner__content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  grid-area: 1/1/2/4;
+  background-image: var(--gradient-1);
+  z-index: -1;
+}
+
+.banner__content h2 {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  line-height: 6rem;
+  color: var(--white);
+}
+
+.banner__content p {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.banner__content p a {
+  text-decoration: underline;
+  color: var(--white);
+}
+
+.footer {
+  background-color: var(--text-dark);
+}
+
+.footer__container {
+  display: grid;
+  gap: 4rem 2rem;
+}
+
+.footer__logo img {
+  margin-bottom: 2rem;
+  max-width: 250px;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.footer__links {
+  display: grid;
+  gap: 1rem;
+}
+
+.footer__links :is(li, a) {
+  color: var(--text-light);
+}
+
+.footer__links a:hover {
+  color: var(--white);
+}
+
+.footer__links a span {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+  border-top: 1px solid var(--text-light);
+}
+
+@media (width > 540px) {
+  .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mentor__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  header {
+    position: relative;
+    isolation: isolate;
+  }
+
+  header::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    width: 65%;
+    aspect-ratio: 1;
+    background-image: var(--gradient-1);
+    border-radius: 100%;
+    z-index: -1;
+  }
+
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo img {
+    max-width: 200px;
+  }
+
+  .nav__logo .logo-dark {
+    display: flex;
+  }
+
+  .nav__logo .logo-white {
+    display: none;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    width: fit-content;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none !important;
+  }
+
+  .nav__links a {
+    color: var(--text-dark);
+  }
+
+  .nav__links li:last-child {
+    display: none;
+  }
+
+  .nav__btns {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__container {
+    padding-top: 0;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .header__container :is(h1, h2, p, .header__btn) {
+    text-align: left;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .facility__container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, calc(var(--max-width) / 2))
+      minmax(0, calc(var(--max-width) / 2))
+      minmax(0, 1fr);
+  }
+
+  .facility__image {
+    grid-area: 1/1/2/3;
+  }
+
+  .facility__image img {
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 8rem;
+    border-bottom-right-radius: 8rem;
+  }
+
+  .facility__content {
+    grid-area: 1/3/2/4;
+  }
+
+  .facility__content::before {
+    grid-area: 1/2/2/5;
+  }
+
+  .mentor__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .banner {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, calc(var(--max-width) / 2))
+      minmax(0, calc(var(--max-width) / 2))
+      minmax(0, 1fr);
+  }
+
+  .banner__content {
+    grid-area: 1/2/2/3;
+  }
+
+  .banner__image {
+    grid-area: 1/3/2/5;
+  }
+
+  .banner__image img {
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width > 1024px) {
+  .service__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service__image {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    grid-area: 1/2/3/3;
+  }
+
+  .service__image img {
+    position: absolute;
+    top: -10rem;
+  }
+
+  .popular__card {
+    padding: 1.5rem;
+  }
+
+  .facility__content {
+    padding-inline: 4rem 1rem;
+  }
+
+  .mentor__grid {
+    gap: 4rem 2rem;
+  }
+
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999; /* Diğer içeriklerin üzerinde görünmesini sağlar */
+  }
+  
+  .popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  .popup-content {
+    background-color: white;
+    padding: 30px;  /* Popup içeriğine genel padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 500px;
+    position: relative; /* Pozisyon ayarları */
+  }
+
+
+  .popup-title {
+    font-size: 24px; /* Başlık font boyutu */
+    color: var(--primary-color); /* Başlık rengi */
+    margin-bottom: 20px; /* Başlık altındaki boşluk */
+  }
+  
+  .popup-description {
+    font-size: 16px; /* Açıklama metni font boyutu */
+    color: var(--text-dark); /* Metin rengi */
+    margin-bottom: 25px; /* Açıklama metni altındaki boşluk */
+  }
+  
+  .popup-overlay.active .popup-content {
+    transform: translateY(0);
+  }
+  
+  
+  
+  .close-btn {
+    font-size: 16px;
+    background: #ff5f5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Butonu sağ üst köşeye sabitle */
+    top: 10px;
+    right: 10px;
+  }
+
+  .popup-content p {
+    line-height: 1.6; /* Satır yüksekliği */
+  }
+
+  .login-modal {
+    position: fixed;
+    z-index: 9999;  /* Ön planda olmasını sağlayacak yüksek bir değer */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf siyah arka plan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.login-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.login-modal input[type="text"],
+.login-modal input[type="password"],
+.login-modal input[type="email"] { /* Email inputunu da kapsayacak şekilde genişletilmiş selector */
+    width: 100%;
+    padding: 10px 15px; /* Daha rahat bir yazım alanı için padding */
+    margin: 8px 0 15px 0; /* Üst ve alt elemanlar arasında boşluk */
+    display: inline-block;
+    border: 1px solid #ccc; /* Sınır stili */
+    box-sizing: border-box; /* Kutu modeli boyutlandırması */
+    border-radius: 4px; /* Kenarları yuvarlak */
+    background-color: #f8f8f8; /* Arka plan rengi */
+    transition: border-color 0.3s ease-in-out; /* Geçiş efektleri */
+}
+
+.login-modal input[type="text"]:focus,
+.login-modal input[type="password"]:focus,
+.login-modal input[type="email"]:focus { /* Fokus durumunda özel stiller */
+    border-color: #6658dd; /* Fokus durumunda sınır rengi */
+    box-shadow: 0 0 8px rgba(102, 88, 221, 0.2); /* Hafif bir gölge efekti */
+}
+
+.form-content {
+  display: block; /* Formlar her zaman block olarak kalacak */
+  opacity: 0; /* Başlangıçta görünmez */
+  visibility: hidden; /* Başlangıçta gizli */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Animasyon geçişi */
+}
+
+.active-form {
+  opacity: 1; /* Aktif form tamamen görünür */
+  visibility: visible; /* Görünür hale gelir */
+}
+
+
+/* ID Seçiciler: Sayfada yalnızca bir tane olacak öğeler */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#chatbot-button img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#chatbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+  background-color: white;
+  width: 350px;
+  max-width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transform: translateY(20px); /* Animasyon başlangıç pozisyonu */
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Açılma ve kapanma animasyonu */
+}
+
+#chatbot-window.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#chatbot-messages {
+  height: 400px; /* Yüksekliği artırıldı */
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  font-size: 14px;
+}
+
+#chatbot-send-btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #0078D7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 120, 215, 0.2); /* Butona gölge ekledik */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+}
+
+#chatbot-send-btn:hover {
+  background-color: #005bb5;
+  box-shadow: 0 6px 14px rgba(0, 120, 215, 0.4); /* Hover sırasında gölge efekti */
+}
+
+/* Sınıf Seçiciler: Birden fazla kez kullanılabilecek öğeler */
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f4f6;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chatbot-close-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chatbot-msg {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chatbot-msg-user {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.chatbot-msg-bot {
+  justify-content: flex-start;
+}
+
+.chatbot-bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #f1f5f9;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chatbot-msg-user .chatbot-bubble {
+  background-color: #0078D7;
+  color: white;
+  text-align: right;
+}
+
+.chatbot-msg-bot .chatbot-bubble {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.chatbot-input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+
+/* Bot mesajı için ikon */
+.bot-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+}
