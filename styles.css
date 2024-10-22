@@ -1072,4 +1072,123 @@ nav {
   vertical-align: middle;
 }
 
+/* Registration Form Styling */
+.registration-container {
+  /* background: linear-gradient(to right, #FDB927, #A32638); Gradient from light red to dark red */
+  background:  #f5a802; /* Solid color for better contrast */
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 12px; /* Smoother border radius for a modern look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  max-width: 600px; /* Slightly larger form for better field spacing */
+  margin: 30px auto; /* Center align and add more vertical space */
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+  grid-gap: 20px; /* Larger gap between fields */
+}
+
+.registration-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-field label {
+  font-size: 16px; /* Larger font size for better readability */
+  color: #ffffff; /* White color for better contrast */
+  margin-bottom: 10px; /* Increased space between label and input */
+}
+
+.registration-field input[type="text"],
+.registration-field input[type="number"],
+.registration-field input[type="email"] {
+  padding: 15px; /* More padding for a better user experience */
+  border: 2px solid #ffffff; /* White border for visual consistency */
+  border-radius: 6px; /* Rounded corners for a softer look */
+  width: 100%; /* Full width to utilize grid space */
+  box-sizing: border-box; /* Includes padding and border in the width */
+}
+
+.registration-btn {
+  grid-column: 1 / -1; /* Button spans across all columns */
+  background-color: #ffffff; /* White button for contrast */
+  color: #f5a802; /* Text color matches the form background */
+  border: none;
+  padding: 12px 0; /* Larger vertical padding */
+  border-radius: 6px; /* Consistency with input fields */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.registration-btn:hover {
+  background-color: #cccccc; /* Darker shade on hover for interaction */
+  color: #222222; /* Darker text on hover for readability */
+}
+
+/* Interactive feedback styles */
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus {
+  border-color: #ffab91; /* Soft orange to keep in theme but noticeable on focus */
+  outline: none;
+}
+
+/* Real-time validation feedback */
+input:invalid {
+  border-color: #ff5252; /* Bright red for immediate feedback on errors */
+}
+
+
+/* Day Selector Styling */
+.day-selector {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Using brand colors for button and interactive elements */
+.day-btn {
+  background-color: #FFA726; /* Orange shade from the form section */
+  color: #fff; /* White text for contrast */
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 10px; /* Rounded for modern pill-like buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.day-btn:hover, .day-btn.active {
+  background-color: #dd7a00; /* Darker shade for hover and active states */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+/* General Styles for Popular Classes Grid */
+.popular__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.popular__card {
+  background-color: #fff;
+  border-radius: 15px; /* Rounded corners for cards */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for a floating effect */
+  transition: transform 0.3s ease;
+}
+
+.popular__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+
 }

@@ -41,19 +41,46 @@
       </nav>
       <div class="section__container header__container" id="home">
         <div class="header__content">
-          <h1>BAŞARIYA ULAŞANA KADAR DURMA!</h1>
-          <h2>FİT VE MUTLU</h2>
-          <p>
-            Can bas cannnnnnn, durma lan basssssssssssss!
-          </p>
-          <div class="header__btn" style="border-radius: 90%;">
-            <button class="btn">Daha Fazlasını Keşfet</button>
-          </div>
+            <h1>BAŞARIYA ULAŞANA KADAR DURMA!</h1>
+            <h2>FİT VE MUTLU</h2>
+            <p>Can bas cannnnnnn, durma lan basssssssssssss!</p>
+            <div class="header__btn" style="border-radius: 90%;">
+                <button class="btn">Daha Fazlasını Keşfet</button>
+            </div>
         </div>
-        <div class="header__image">
-          <img src="assets/header.png" alt="header" />
+        <div class="header__registration registration-container">
+            <form id="registrationForm" class="registration-form grid-layout">
+                <div class="registration-field field-name">
+                    <label for="firstName">Ad:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Adınız" required>
+                </div>
+                <div class="registration-field field-lastname">
+                    <label for="lastName">Soyad:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Soyadınız" required>
+                </div>
+                <div class="registration-field field-height">
+                    <label for="height">Boy (cm):</label>
+                    <input type="number" id="height" name="height" placeholder="Boyunuz" required>
+                </div>
+                <div class="registration-field field-weight">
+                    <label for="weight">Kilo (kg):</label>
+                    <input type="number" id="weight" name="weight" placeholder="Kilonuz" required>
+                </div>
+                <div class="registration-field field-condition">
+                    <label for="medicalCondition">Hastalık:</label>
+                    <input type="text" id="medicalCondition" name="medicalCondition" placeholder="Var ise hastalıklarınız">
+                </div>
+                <div class="registration-field field-email">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail adresiniz" required>
+                </div>
+                <button type="submit" class="btn registration-btn">Kaydol</button>
+            </form>
         </div>
-      </div>
+    </div>
+    
+    
+    
     </header>
 
     <div class="about" id="about">
@@ -152,92 +179,26 @@
 
     <section class="popular" id="class">
       <div class="section__container popular__container">
-        <h2 class="section__header">What Do You Want To Join Today?</h2>
-        <div class="popular__grid">
-          <div class="popular__card">
-            <div>
-              <h4>Cardio Strength</h4>
-              <p>Full-body workout with cardio</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
+          <h2 class="section__header">Günlük Egzersiz Programları</h2>
+          
+          <!-- Daily buttons -->
+          <div class="day-selector">
+              <button class="day-btn" onclick="showDay('monday')">Monday</button>
+              <button class="day-btn" onclick="showDay('tuesday')">Tuesday</button>
+              <button class="day-btn" onclick="showDay('wednesday')">Wednesday</button>
+              <button class="day-btn" onclick="showDay('thursday')">Thursday</button>
+              <button class="day-btn" onclick="showDay('friday')">Friday</button>
+              <button class="day-btn" onclick="showDay('saturday')">Saturday</button>
+              <button class="day-btn" onclick="showDay('sunday')">Sunday</button>
           </div>
-          <div class="popular__card">
-            <div>
-              <h4>Weight Training</h4>
-              <p>Build muscle strength</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
+          
+          <!-- Class cards that change based on selected day -->
+          <div class="popular__grid" id="dailyClasses">
+              <!-- Cards are dynamically loaded here based on the selected day -->
           </div>
-          <div class="popular__card">
-            <div>
-              <h4>Yoga for Flexibility</h4>
-              <p>Improve flexibility and relax</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-          <div class="popular__card">
-            <div>
-              <h4>HIIT</h4>
-              <p>Short bursts of intense exercise</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-          <div class="popular__card">
-            <div>
-              <h4>Personal Training</h4>
-              <p>Customized workout plans</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-          <div class="popular__card">
-            <div>
-              <h4>Group Fitness Classes</h4>
-              <p>Stay motivated and have fun</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-          <div class="popular__card">
-            <div>
-              <h4>Boxing Training</h4>
-              <p>Enhance agility and stamina</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-          <div class="popular__card">
-            <div>
-              <h4>Pilates Core Workout</h4>
-              <p>Strengthen your core</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-          <div class="popular__card">
-            <div>
-              <h4>Spin Class</h4>
-              <p>High-energy cycling sessions</p>
-            </div>
-            <span>
-              <i class="ri-arrow-right-fill"></i>
-            </span>
-          </div>
-        </div>
       </div>
-    </section>
+  </section>
+  
 
     <!-- <section class="facility__container">
       <div class="facility__image">

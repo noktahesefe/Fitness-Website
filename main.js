@@ -320,6 +320,64 @@ function addMessage(message, sender) {
 }
 
 
+function showDay(day) {
+  const classes = {
+    monday: [
+      { title: "Bench Press", description: "Build upper body strength with weight training." },
+      { title: "Spin Class", description: "High-energy cycling for endurance." }
+    ],
+    tuesday: [
+      { title: "Squat Routines", description: "Focus on leg strength and stability." },
+      { title: "Pilates", description: "Enhance flexibility and core strength." }
+    ],
+    wednesday: [
+      { title: "Deadlifts", description: "Develop lower back and core." },
+      { title: "Zumba", description: "Dance-based cardio workout." }
+    ],
+    thursday: [
+      { title: "CrossFit", description: "High-intensity functional training." },
+      { title: "Yoga", description: "Improve flexibility and mental wellness." }
+    ],
+    friday: [
+      { title: "Kickboxing", description: "Combines cardio and resistance training." },
+      { title: "HIIT", description: "Short, intense bursts of exercise with rests." }
+    ],
+    saturday: [
+      { title: "Bodybuilding", description: "Muscle building and sculpting workouts." },
+      { title: "Aerobics", description: "Improve endurance with rhythmic exercise." }
+    ],
+    sunday: [
+      { title: "Restorative Yoga", description: "Focus on relaxing and stretching muscles." },
+      { title: "Light Cardio", description: "Mild cardiovascular exercises to end the week." }
+    ]
+  };
+
+  const container = document.getElementById('dailyClasses');
+  container.innerHTML = ''; // Clear current content
+  classes[day].forEach(cls => {
+    container.innerHTML += `
+      <div class="popular__card">
+        <div>
+          <h4>${cls.title}</h4>
+          <p>${cls.description}</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+const buttons = document.querySelectorAll('.day-btn');
+buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        buttons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+
+
+
+
 const mockData = [
   {
     title: "Bench Press",
